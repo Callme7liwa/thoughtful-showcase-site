@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
+import ProjectsNew from "@/components/ProjectsNew";
+import TechStack from "@/components/TechStack";
 import Education from "@/components/Education";
-import Skills from "@/components/Skills";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -13,8 +13,8 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <Projects />
-        <Skills />
+        <ProjectsNew />
+        <TechStack />
         <Education />
         <About />
         <Contact />

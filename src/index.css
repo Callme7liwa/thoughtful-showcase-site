@@ -8,21 +8,21 @@
 
 @layer base {
   :root {
-    /* Color Palette - Warm Professional */
-    --background: 28 20% 97%;           /* Warm cream */
-    --foreground: 220 13% 18%;          /* Deep charcoal */
+    /* Color Palette - Tech Professional */
+    --background: 220 15% 95%;          /* Clean tech gray */
+    --foreground: 222 20% 11%;          /* Dark text */
     
     --surface: 0 0% 100%;               /* Pure white for cards */
-    --surface-variant: 28 15% 94%;     /* Subtle warm gray */
+    --surface-variant: 220 10% 92%;    /* Subtle tech gray */
     
-    --primary: 185 57% 30%;             /* Deep teal */
+    --primary: 217 91% 60%;             /* Modern blue */
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 185 57% 25%;
+    --primary-hover: 217 91% 55%;
     
-    --secondary: 25 25% 55%;            /* Warm neutral */
+    --secondary: 220 14% 30%;           /* Tech dark */
     --secondary-foreground: 0 0% 100%;
     
-    --accent: 14 78% 60%;               /* Warm terracotta */
+    --accent: 142 76% 50%;              /* Success green */
     --accent-foreground: 0 0% 100%;
     
     --muted: 28 10% 88%;                /* Light warm gray */

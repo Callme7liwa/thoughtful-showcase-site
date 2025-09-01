@@ -106,7 +106,7 @@ const Education = () => {
           </h2>
           <p className="text-lg text-text-secondary leading-relaxed">
             Continuous learning through formal education, professional certifications, 
-            and specialized training programs that keep me at the forefront of technology.
+            and specialized training in web development, mobile app development, and modern technologies.
           </p>
         </div>
 

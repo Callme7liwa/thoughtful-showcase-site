@@ -22,13 +22,13 @@ const Hero = () => {
                 Alex <span className="text-gradient">Johnson</span>
               </h1>
               <h2 className="text-2xl lg:text-3xl font-heading font-light text-text-secondary">
-                Full Stack Developer & UI/UX Designer
+                Web & Mobile App Developer
               </h2>
             </div>
             
             <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
-              I craft digital experiences that combine beautiful design with robust functionality. 
-              Specializing in modern web technologies and user-centered design principles.
+              Building scalable web applications and intuitive mobile apps with modern technologies. 
+              Specialized in React, React Native, Node.js, and cloud-native solutions.
             </p>
 
             {/* CTA Buttons */}
