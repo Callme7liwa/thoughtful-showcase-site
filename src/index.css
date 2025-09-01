@@ -1,40 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Portfolio Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Color Palette - Warm Professional */
+    --background: 28 20% 97%;           /* Warm cream */
+    --foreground: 220 13% 18%;          /* Deep charcoal */
+    
+    --surface: 0 0% 100%;               /* Pure white for cards */
+    --surface-variant: 28 15% 94%;     /* Subtle warm gray */
+    
+    --primary: 185 57% 30%;             /* Deep teal */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 185 57% 25%;
+    
+    --secondary: 25 25% 55%;            /* Warm neutral */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 14 78% 60%;               /* Warm terracotta */
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 28 10% 88%;                /* Light warm gray */
+    --muted-foreground: 220 9% 46%;     /* Medium gray */
+    
+    --border: 28 15% 88%;               /* Subtle borders */
+    --input: 28 15% 94%;
+    --ring: 185 57% 30%;
+    
+    /* Semantic tokens */
+    --text-primary: var(--foreground);
+    --text-secondary: var(--muted-foreground);
+    --text-accent: var(--primary);
+    
+    /* Spacing and sizing */
+    --radius: 0.75rem;
+    --section-padding: 5rem;
+    --container-max: 1200px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px hsl(220 13% 18% / 0.04);
+    --shadow-md: 0 4px 12px hsl(220 13% 18% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(220 13% 18% / 0.12);
+    --shadow-accent: 0 8px 32px hsl(185 57% 30% / 0.15);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(185 57% 30%), hsl(185 57% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(14 78% 60%), hsl(14 78% 65%));
+    --gradient-surface: linear-gradient(to bottom, hsl(0 0% 100%), hsl(28 15% 98%));
+    
+    /* Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Animations */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -100,6 +126,131 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    background: hsl(var(--background));
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Container utility */
+  .container-custom {
+    @apply mx-auto px-6 lg:px-8;
+    max-width: var(--container-max);
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 lg:py-20;
+  }
+  
+  /* Card styles */
+  .card-surface {
+    @apply bg-white border border-border shadow-sm;
+    background: hsl(var(--surface));
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .card-elevated {
+    @apply bg-white border border-border;
+    background: hsl(var(--surface));
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-medium text-sm;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: var(--shadow-accent);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-medium text-sm border border-border;
+    background: hsl(var(--surface));
+    color: hsl(var(--foreground));
+    transition: var(--transition-base);
+  }
+  
+  .btn-secondary:hover {
+    background: hsl(var(--surface-variant));
+    border-color: hsl(var(--primary));
+  }
+  
+  /* Text styles */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--surface-variant));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
   }
 }
