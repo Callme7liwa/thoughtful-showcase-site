@@ -8,6 +8,13 @@ const Hero = () => {
     }
   };
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/CV.pdf";
+    link.download = "CV.pdf";
+    link.click();
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center section-padding">
       <div className="container-custom">
@@ -19,7 +26,7 @@ const Hero = () => {
                 Hello, I'm
               </p>
               <h1 className="text-5xl lg:text-7xl font-heading font-bold text-text-primary leading-tight">
-                Alex <span className="text-gradient">Johnson</span>
+                AYOUB <span className="text-gradient">SEDDIKI</span>
               </h1>
               <h2 className="text-2xl lg:text-3xl font-heading font-light text-text-secondary">
                 Web & Mobile App Developer
@@ -27,8 +34,7 @@ const Hero = () => {
             </div>
             
             <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
-              Building scalable web applications and intuitive mobile apps with modern technologies. 
-              Specialized in React, React Native, Node.js, and cloud-native solutions.
+              * Building scalable web applications and intuitive mobile apps with modern technologies.
             </p>
 
             {/* CTA Buttons */}
@@ -40,7 +46,7 @@ const Hero = () => {
                 View My Work
                 <ArrowDown size={16} />
               </button>
-              <button className="btn-secondary">
+              <button onClick={handleDownload}  className="btn-secondary">
                 Download Resume
               </button>
             </div>
@@ -50,7 +56,7 @@ const Hero = () => {
               <p className="text-sm text-text-secondary">Connect with me:</p>
               <div className="flex items-center gap-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Callme7liwa" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 text-text-secondary hover:text-text-accent transition-colors hover:scale-110 transition-transform"
@@ -59,7 +65,7 @@ const Hero = () => {
                   <Github size={20} />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/seddiki--ayoub/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 text-text-secondary hover:text-text-accent transition-colors hover:scale-110 transition-transform"
@@ -68,7 +74,7 @@ const Hero = () => {
                   <Linkedin size={20} />
                 </a>
                 <a 
-                  href="mailto:alex@example.com"
+                  href="mailto:ayoubseddiki132@gmail.com"
                   className="p-2 text-text-secondary hover:text-text-accent transition-colors hover:scale-110 transition-transform"
                   aria-label="Email"
                 >

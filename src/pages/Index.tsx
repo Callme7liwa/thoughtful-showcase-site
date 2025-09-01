@@ -6,6 +6,7 @@ import Education from "@/components/Education";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Experience from "@/components/Experience";
 
 const Index = () => {
   return (
@@ -13,9 +14,10 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
+        <Experience />
+        <Education />
         <ProjectsNew />
         <TechStack />
-        <Education />
         <About />
         <Contact />
       </main>

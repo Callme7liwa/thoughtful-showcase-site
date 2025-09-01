@@ -44,85 +44,133 @@ const ProjectsNew = () => {
     { name: "Firebase", icon: "🔥", color: "text-orange-500" },
     { name: "MongoDB", icon: "🍃", color: "text-green-600" },
     { name: "PostgreSQL", icon: "🐘", color: "text-blue-700" },
+    { name: "Google Maps API", icon: "🗺️", color: "text-green-500" },
+    { name: "Cloudinary", icon: "☁️", color: "text-blue-500" },
+    { name: "Express.js", icon: "🚀", color: "text-gray-600" },
   ];
 
   const projects: Project[] = [
     {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with modern UI",
-      longDescription: "A comprehensive e-commerce platform built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, inventory management, real-time notifications, and a responsive admin dashboard. Implemented with microservices architecture for scalability.",
-      technologies: ["React", "Node.js", "PostgreSQL", "TypeScript", "Stripe", "Redis"],
-      image: "/placeholder-ecommerce.jpg",
-      images: ["/placeholder-ecommerce.jpg", "/placeholder-ecommerce-2.jpg", "/placeholder-ecommerce-3.jpg"],
-      liveUrl: "https://demo-ecommerce.com",
-      githubUrl: "https://github.com/username/ecommerce",
+      id: 8,
+      title: "Microservices Task Management System",
+      description: "Full-stack task management application with .NET microservices and 3D interface",
+      longDescription: "Developed a comprehensive task management application to explore .NET microservices architecture and advanced frontend technologies. The project features a distributed backend built with .NET Core microservices, demonstrating scalable service communication, data persistence, and API gateway patterns. The frontend showcases innovative 3D user interface elements using Three.js, creating an engaging and interactive user experience for task visualization and management. This project served as a technical exploration of modern development practices, combining enterprise-grade backend architecture with cutting-edge frontend animation techniques.",
+      technologies: [".NET Core", "C#", "Three.js", "React", "Docker", "PostgreSQL"],
+      image: "/images/tasks/1.jpg",
+      images: Array.from({length: 6}, (_, i) => `/images/tasks/${i + 1}.jpg`),
+      githubUrl: "https://github.com/username/microservices-task-manager",
+      liveUrl: "https://3d-task-manager.com",
       category: "website",
-      featured: true
+      featured: false
     },
     {
-      id: 2,
-      title: "TaskFlow Mobile App",
-      description: "Cross-platform productivity app with real-time sync",
-      longDescription: "A powerful task management mobile application built with React Native. Features offline-first architecture, real-time synchronization, push notifications, biometric authentication, and collaborative workspaces. Available on both iOS and Android.",
-      technologies: ["React Native", "Firebase", "TypeScript", "Redux", "Push Notifications"],
-      image: "/placeholder-mobile-app.jpg",
-      images: ["/placeholder-mobile-app.jpg", "/placeholder-mobile-app-2.jpg", "/placeholder-mobile-app-3.jpg"],
-      githubUrl: "https://github.com/username/taskflow",
-      appStoreUrl: "https://apps.apple.com/app/taskflow",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.taskflow",
+      id: 7,
+      title: "Enterprise Project Management Platform",
+      description: "Comprehensive web-based solution for project planning and team collaboration",
+      longDescription: "Designed and developed a comprehensive web-based project management application for an enterprise client, delivering a centralized solution for project planning, team collaboration, and progress tracking. The platform streamlined project workflows, enhanced cross-functional communication, and provided real-time visibility into project status and deliverables. Conducted stakeholder interviews and requirements gathering to understand specific business needs, resulting in an intuitive user interface optimized for diverse user roles and measurable improvements in team productivity.",
+      technologies: ["React", "Spring Boot", "PostgreSQL", "Socket.io", "JWT", "Docker", "Redis"],
+      image: "images/projects/project_1.png",
+      images: Array.from({length: 8}, (_, i) => `/images/projects/project_${i + 1}.png`),
+      githubUrl: "https://github.com/username/enterprise-project-management",
+      liveUrl: "https://enterprise-pm-platform.com",
+      category: "website",
+      featured: false
+    },
+
+    {
+      id: 9,
+      title: "Peer-to-Peer Package Delivery Platform",
+      description: "Mobile marketplace connecting package senders with travelers for cost-effective delivery",
+      longDescription: "Developed an innovative mobile application that creates a peer-to-peer marketplace for package delivery services. The platform connects individuals who need to send packages with travelers heading to the same destinations, enabling cost-effective and efficient delivery solutions. The application features secure user verification, real-time tracking, integrated payment processing, and comprehensive safety protocols. Built with a focus on trust and security, the platform includes user ratings, identity verification, and insurance integration to ensure safe transactions. This solution addresses the growing demand for flexible, community-driven logistics while providing travelers with opportunities to monetize their journeys.",
+      technologies: ["Flutter", "Spring Boot", "MySQL", "Stripe", "Google Maps API", "JWT", "Socket.io"],
+      image: "/images/deliver/1.jpg",
+      images: Array.from({length: 10}, (_, i) => `/images/deliver/${i + 1}.jpg`),
+      githubUrl: "https://github.com/username/p2p-delivery-platform",
+      appStoreUrl: "https://apps.apple.com/app/peer-delivery",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.peerdelivery",
       category: "mobile",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Analytics Dashboard",
-      description: "Real-time data visualization platform",
-      longDescription: "A sophisticated analytics dashboard for business intelligence. Built with Vue.js and D3.js for interactive data visualization, featuring real-time updates, custom report generation, and multi-tenant architecture.",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "PostgreSQL", "Docker"],
-      image: "/placeholder-dashboard.jpg",
-      images: ["/placeholder-dashboard.jpg", "/placeholder-dashboard-2.jpg"],
-      liveUrl: "https://analytics-demo.com",
-      githubUrl: "https://github.com/username/analytics",
-      category: "website"
-    },
-    {
-      id: 4,
-      title: "FitTracker iOS App",
-      description: "Native iOS fitness tracking application",
-      longDescription: "A native iOS fitness application built with Swift and SwiftUI. Integrates with HealthKit, features workout tracking, progress analytics, social challenges, and Apple Watch compatibility.",
-      technologies: ["Swift", "SwiftUI", "HealthKit", "Core Data", "CloudKit"],
-      image: "/placeholder-fitness.jpg",
-      images: ["/placeholder-fitness.jpg", "/placeholder-fitness-2.jpg", "/placeholder-fitness-3.jpg"],
-      githubUrl: "https://github.com/username/fittracker",
-      appStoreUrl: "https://apps.apple.com/app/fittracker",
-      category: "mobile"
-    },
-    {
-      id: 5,
-      title: "Portfolio Website",
-      description: "Modern developer portfolio with CMS",
-      longDescription: "A modern, responsive portfolio website built with Next.js and headless CMS. Features include blog functionality, project showcase, contact forms, and SEO optimization.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "Vercel"],
-      image: "/placeholder-portfolio.jpg",
-      images: ["/placeholder-portfolio.jpg", "/placeholder-portfolio-2.jpg"],
-      liveUrl: "https://developer-portfolio.com",
-      githubUrl: "https://github.com/username/portfolio",
-      category: "website"
+      featured: false
     },
     {
       id: 6,
-      title: "WeatherApp Flutter",
-      description: "Cross-platform weather application",
-      longDescription: "A beautiful weather application built with Flutter. Features include location-based forecasts, weather maps, severe weather alerts, and offline caching for recently viewed locations.",
-      technologies: ["Flutter", "Dart", "Weather API", "Maps", "SQLite"],
-      image: "/placeholder-weather.jpg",
-      images: ["/placeholder-weather.jpg", "/placeholder-weather-2.jpg"],
-      githubUrl: "https://github.com/username/weather-app",
-      appStoreUrl: "https://apps.apple.com/app/weatherapp",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.weatherapp",
-      category: "mobile"
-    }
+      title: "Moroccan Cultural Heritage Platform",
+      description: "Interactive web platform for cultural preservation and tourism",
+      longDescription: "Developed an interactive web platform dedicated to preserving and promoting Morocco's cultural treasures. Collaborated closely with cultural heritage experts to create an educational experience for global visitors, featuring historical sites, museums, and cultural events through immersive photos, videos, and detailed descriptions. The platform included practical travel planning tools to enhance visitor experiences and contributed to cultural preservation efforts while promoting Moroccan cultural tourism worldwide.",
+      technologies: ["Laravel", "Javascript", "Mysql"],
+      image: "/images/patrimoin/patri_1.png",
+      images: Array.from({length: 16}, (_, i) => `/images/patrimoin/patri_${i + 1}.png`),
+      githubUrl: "https://github.com/username/moroccan-heritage-platform",
+      liveUrl: "https://moroccan-heritage-platform.com",
+      category: "website",
+      featured: false
+    },
+    {
+      id: 10,
+      title: "Advanced Audio Streaming Platform",
+      description: "Full-stack streaming platform with integrated marketing analytics and targeted advertising",
+      longDescription: "Developed an enhanced iteration of an audio streaming platform, incorporating advanced marketing capabilities and data analytics. The platform features comprehensive user analytics, customizable branding options, and sophisticated targeted advertising systems. Built with a modern tech stack including React.js for dynamic frontend experiences, Spring Boot for robust backend services, and MongoDB for scalable data management. The project demonstrates continuous learning and adaptation to emerging web technologies, integrating complex features such as real-time user behavior tracking, personalized content recommendations, and revenue optimization through strategic ad placement. This ongoing development project showcases commitment to staying current with industry trends while delivering enterprise-grade streaming solutions.",
+      technologies: ["React.js", "Spring Boot", "MongoDB"],
+      image: "/images/rap/rap_6.jpeg",
+      images: Array.from({length: 11}, (_, i) => `/images/rap/rap_${i + 1}.jpeg`),
+      githubUrl: "https://github.com/username/advanced-audio-streaming",
+      liveUrl: "https://advanced-streaming-platform.com",
+      category: "website",
+      featured: false
+    },
+    {
+      id: 11,
+      title: "School Management Information System",
+      description: "Comprehensive web-based platform for academic administration and student tracking",
+      longDescription: "Designed and developed a comprehensive school management system that centralizes student data, teacher information, grade management, and attendance tracking. The platform streamlined academic processes, enhanced communication between students and educators, and provided real-time insights into student progress and performance. Collaborated extensively with school administrators to conduct requirements analysis and ensure the solution addressed specific institutional needs. The system features role-based access control, automated reporting capabilities, parent-student portals, and integrated communication tools. This solution significantly improved administrative efficiency while providing educators with better tools for student monitoring and engagement.",
+      technologies: ["React js", "Spring Boot", "Express.js", "MySQL", "JWT", "PDF Generation", "Email Integration"],
+      image: "/images/school/image_3.png",
+      images: Array.from({length: 8}, (_, i) => `/images/school/image_${i + 1}.png`),
+      githubUrl: "https://github.com/username/school-management-system",
+      liveUrl: "https://school-management-demo.com",
+      category: "website",
+      featured: false
+    },
+
+    {
+      id: 12,
+      title: "Smart Baby Monitoring System",
+      description: "IoT-enabled infant monitoring platform with machine learning behavioral analysis",
+      longDescription: "Currently developing an advanced baby monitoring system that integrates Android mobile development, machine learning algorithms, and Internet of Things technologies. The system utilizes motion and temperature sensors to continuously monitor infant behavior patterns and environmental conditions, providing real-time alerts to parents through a dedicated mobile application. The project incorporates machine learning models for behavioral pattern recognition, enabling the system to distinguish between normal sleep movements and potential concerns. This comprehensive solution combines hardware sensor integration, cloud-based data processing, and intuitive mobile interfaces to enhance infant safety and provide parents with peace of mind through intelligent monitoring capabilities.",
+      technologies: ["Android Studio", "Java", "TensorFlow Lite", "IoT Sensors", "Firebase", "Machine Learning", "Bluetooth", "Real-time Analytics"],
+      image: "/images/baby/baby_1.png",
+      images: Array.from({length: 6}, (_, i) => `/images/baby/baby_${i + 1}.png`),
+      githubUrl: "https://github.com/username/smart-baby-monitor",
+      category: "mobile",
+      featured: false
+    },
+
+    {
+      id: 13,
+      title: "Street Football Community Platform",
+      description: "Mobile marketplace connecting street football teams and individual players",
+      longDescription: "Developed a comprehensive mobile application designed to unite the street football community by connecting teams with players and facilitating match organization. The platform streamlines the process of finding opponents for teams while providing individual players with easy access to join local teams. Key features include team-initiated match requests, team recruitment postings, and player registration systems. The application incorporates geolocation services to connect nearby players and teams, real-time messaging for coordination, and reputation systems to build trust within the community. This dynamic platform transforms the organization of street football matches and strengthens the grassroots football community through improved connectivity and simplified team management.",
+      technologies: ["Flutter", "Firebase", "Google Maps API", "Push Notifications", "Geolocation", "Real-time Chat", "User Authentication"],
+      image: "/images/foot/foot_1.jpeg",
+      images: Array.from({length: 11}, (_, i) => `/images/foot/foot_${i + 1}.jpeg`),
+      githubUrl: "https://github.com/username/street-football-community",
+      appStoreUrl: "https://apps.apple.com/app/street-football",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.streetfootball",
+      category: "mobile",
+      featured: false
+    },
+    {
+      id: 14,
+      title: "Zinooo - Moroccan E-Commerce Platform",
+      description: "Localized e-commerce solution tailored for Moroccan market with GraphQL architecture",
+      longDescription: "Developed Zinooo, a comprehensive e-commerce web application specifically designed for Moroccan customers and market needs. Built with modern technologies including Spring Boot for robust backend services, Angular for dynamic frontend experiences, and GraphQL for efficient data querying. The platform incorporates Moroccan-specific features such as local payment methods, Arabic/French language support, regional shipping options, and culturally relevant product categories. The application addresses unique challenges of the Moroccan e-commerce market including mobile-first design for prevalent smartphone usage, integration with local banking systems, and support for traditional commerce practices alongside digital innovation.",
+      technologies: ["Spring Boot", "Angular", "GraphQL", "Java", "TypeScript", "PostgreSQL", "JWT", "Payment Gateways"],
+      image: "/images/zinoo/zinoo_1.png",
+      images: Array.from({length: 6}, (_, i) => `/images/zinoo/zinoo_${i + 1}.png`),
+      githubUrl: "https://github.com/username/zinooo-ecommerce",
+      liveUrl: "https://zinooo.ma",
+      category: "website",
+      featured: false
+    },
   ];
 
   const filteredProjects = selectedCategory === "all" 
@@ -212,7 +260,20 @@ const ProjectsNew = () => {
                       {/* Project Image */}
                       <div className="aspect-video bg-muted relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
-                        <div className="w-full h-full bg-muted flex items-center justify-center text-text-secondary">
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback vers icône en cas d'erreur
+                            const target = e.currentTarget;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        {/* Fallback icon */}
+                        <div className="w-full h-full bg-muted flex items-center justify-center text-text-secondary" style={{display: 'none'}}>
                           {project.category === "mobile" ? <Smartphone size={48} /> : <Globe size={48} />}
                         </div>
                       </div>
@@ -273,14 +334,29 @@ const ProjectsNew = () => {
                         {/* Image Gallery */}
                         <div className="relative">
                           <div className="aspect-video bg-muted rounded-lg overflow-hidden relative">
-                            <div className="w-full h-full bg-muted flex items-center justify-center text-text-secondary">
+                            <img 
+                              src={selectedProject.images[currentImageIndex]} 
+                              alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                console.log(`Failed to load: ${selectedProject.images[currentImageIndex]}`);
+                                // Fallback vers icône
+                                const target = e.currentTarget;
+                                target.style.display = 'none';
+                                const fallback = target.nextElementSibling as HTMLElement;
+                                if (fallback) fallback.style.display = 'flex';
+                              }}
+                            />
+                            {/* Fallback icon */}
+                            <div className="absolute inset-0 w-full h-full bg-muted flex items-center justify-center text-text-secondary" style={{display: 'none'}}>
                               {selectedProject.category === "mobile" ? 
                                 <Smartphone size={64} /> : 
                                 <Globe size={64} />
                               }
-                              <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded">
-                                Screenshot {currentImageIndex + 1}
-                              </div>
+                            </div>
+                            
+                            <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded">
+                              Screenshot {currentImageIndex + 1}
                             </div>
                             
                             {selectedProject.images.length > 1 && (
@@ -427,7 +503,18 @@ const ProjectsNew = () => {
                   {/* Project Image */}
                   <div className="aspect-video bg-muted relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
-                    <div className="w-full h-full bg-muted flex items-center justify-center text-text-secondary">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full bg-muted flex items-center justify-center text-text-secondary" style={{display: 'none'}}>
                       {project.category === "mobile" ? <Smartphone size={32} /> : <Globe size={32} />}
                     </div>
                   </div>
@@ -483,20 +570,32 @@ const ProjectsNew = () => {
               </DialogTrigger>
 
               <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
-                {/* Same dialog content as featured projects */}
                 {selectedProject?.id === project.id && (
                   <div className="space-y-6">
-                    {/* Image Gallery */}
+                    {/* Image Gallery - Same as above */}
                     <div className="relative">
                       <div className="aspect-video bg-muted rounded-lg overflow-hidden relative">
-                        <div className="w-full h-full bg-muted flex items-center justify-center text-text-secondary">
+                        <img 
+                          src={selectedProject.images[currentImageIndex]} 
+                          alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.log(`Failed to load: ${selectedProject.images[currentImageIndex]}`);
+                            const target = e.currentTarget;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        <div className="absolute inset-0 w-full h-full bg-muted flex items-center justify-center text-text-secondary" style={{display: 'none'}}>
                           {selectedProject.category === "mobile" ?
                             <Smartphone size={64} /> :
                             <Globe size={64} />
                           }
-                          <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded">
-                            Screenshot {currentImageIndex + 1}
-                          </div>
+                        </div>
+                        
+                        <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded">
+                          Screenshot {currentImageIndex + 1}
                         </div>
 
                         {selectedProject.images.length > 1 && (
@@ -524,15 +623,14 @@ const ProjectsNew = () => {
                             <button
                               key={index}
                               onClick={() => setCurrentImageIndex(index)}
-                              className={`w-2 h-2 rounded-full transition-colors ${index === currentImageIndex ? "bg-primary" : "bg-muted"
-                                }`}
+                              className={`w-2 h-2 rounded-full transition-colors ${index === currentImageIndex ? "bg-primary" : "bg-muted"}`}
                             />
                           ))}
                         </div>
                       )}
                     </div>
 
-                    {/* Project Details */}
+                    {/* Rest of the dialog content remains the same */}
                     <div className="space-y-6">
                       <div className="flex items-center gap-3">
                         {selectedProject.category === "mobile" ?
@@ -548,7 +646,6 @@ const ProjectsNew = () => {
                         {selectedProject.longDescription}
                       </p>
 
-                      {/* Technologies Used */}
                       <div>
                         <h4 className="font-heading font-semibold text-text-primary mb-4 text-lg">
                           🛠️ Technologies Used
@@ -569,7 +666,6 @@ const ProjectsNew = () => {
                         </div>
                       </div>
 
-                      {/* Action Buttons */}
                       <div className="flex flex-wrap gap-4 pt-4">
                         {selectedProject.liveUrl && (
                           <a

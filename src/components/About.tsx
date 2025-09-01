@@ -3,27 +3,34 @@ import { Download, Coffee, Music, Camera, Gamepad2 } from "lucide-react";
 const About = () => {
   const interests = [
     { icon: <Coffee size={20} />, label: "Coffee Enthusiast" },
-    { icon: <Music size={20} />, label: "Music Production" },
+    { icon: <Music size={20} />, label: "Music" },
     { icon: <Camera size={20} />, label: "Photography" },
     { icon: <Gamepad2 size={20} />, label: "Gaming" },
   ];
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/CV.pdf";
+    link.download = "CV.pdf";
+    link.click();
+  };
+
   const values = [
     {
-      title: "User-Centric Design",
-      description: "Every line of code I write starts with the user experience in mind. I believe great software should be intuitive, accessible, and delightful to use."
+      title: "Infrastructure Excellence",
+      description: "I believe in building robust, scalable infrastructure that serves as a solid foundation for applications. Every deployment pipeline and monitoring system I design prioritizes reliability and performance."
+    },
+    {
+      title: "Automation First",
+      description: "Manual processes are opportunities for automation. I'm passionate about creating intelligent systems that reduce human error, increase efficiency, and allow teams to focus on innovation rather than repetitive tasks."
     },
     {
       title: "Continuous Learning",
-      description: "Technology evolves rapidly, and I embrace that challenge. I'm constantly exploring new frameworks, methodologies, and best practices to stay ahead."
+      description: "Technology evolves rapidly, especially in DevOps and network automation. I embrace this challenge by constantly exploring new tools, frameworks, and methodologies to stay at the forefront of the field."
     },
     {
-      title: "Collaborative Spirit",
-      description: "The best solutions emerge from diverse perspectives. I thrive in team environments where ideas are shared, challenged, and refined together."
-    },
-    {
-      title: "Quality & Performance",
-      description: "I'm passionate about writing clean, efficient code that not only works well but also performs optimally and maintains well over time."
+      title: "Collaborative Problem-Solving",
+      description: "The best solutions emerge from diverse perspectives. I thrive in environments where knowledge is shared across development, operations, and network teams to solve complex technical challenges together."
     }
   ];
 
@@ -38,7 +45,7 @@ const About = () => {
               <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
                 <div className="w-full h-full flex items-center justify-center text-text-secondary">
-                  Professional Photo
+                  <img src="/images/pdp.jpg" alt="Profile" className="object-cover w-full h-full" />
                 </div>
               </div>
               
@@ -56,32 +63,32 @@ const About = () => {
                 About <span className="text-gradient">Me</span>
               </h2>
               <p className="text-xl text-text-secondary leading-relaxed">
-                A passionate developer who bridges the gap between design and technology
+                A versatile engineer bridging software development, DevOps, and network automation
               </p>
             </div>
 
             {/* Bio */}
             <div className="space-y-6 text-text-secondary leading-relaxed fade-in">
               <p>
-                With over 5 years of experience in full-stack development, I've had the 
-                privilege of working with startups and established companies to bring 
-                digital products to life. My journey began with a Computer Science degree, 
-                but it was the intersection of technology and human experience that truly 
-                captured my passion.
+                With over 4 years of experience spanning full-stack development to network automation, 
+                I've evolved from building web applications to architecting enterprise infrastructure 
+                solutions. My journey began with software engineering, developing comprehensive 
+                applications using modern frameworks like React, Spring Boot, and various databases.
               </p>
               
               <p>
-                I specialize in creating seamless user experiences through thoughtful 
-                design and robust engineering. Whether it's architecting scalable backend 
-                systems, crafting responsive frontends, or conducting user research, 
-                I approach each project with curiosity and attention to detail.
+                Currently at Orange Connectivity & Workspace Services, I specialize in NetDevOps 
+                automation, working with Intent-Based Networking stacks and managing complex network 
+                infrastructures. My experience includes deploying Kubernetes clusters, implementing 
+                CI/CD pipelines, and automating network device management using tools like Ansible, 
+                Nautobot, and custom Python scripts.
               </p>
               
               <p>
-                When I'm not coding, you'll find me exploring new coffee shops, 
-                experimenting with music production, or capturing moments through 
-                photography. I believe these creative pursuits enrich my approach 
-                to problem-solving in development.
+                I'm passionate about transforming manual processes into automated, reliable systems. 
+                Whether it's reducing deployment failures by 60% through DevOps transformation or 
+                creating monitoring solutions for critical infrastructure, I approach each challenge 
+                with a focus on scalability and reliability.
               </p>
             </div>
 
@@ -107,7 +114,7 @@ const About = () => {
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 fade-in">
-              <button className="btn-primary flex items-center gap-2">
+              <button onClick={handleDownload} className="btn-primary flex items-center gap-2">
                 <Download size={16} />
                 Download Resume
               </button>
@@ -132,7 +139,7 @@ const About = () => {
               What Drives Me
             </h3>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              These core values guide my approach to development and collaboration
+              These core principles guide my approach to engineering and infrastructure development
             </p>
           </div>
 

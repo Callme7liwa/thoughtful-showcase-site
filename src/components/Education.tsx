@@ -14,59 +14,47 @@ interface EducationItem {
 }
 
 const Education = () => {
+
   const educationData: EducationItem[] = [
     {
       id: 1,
       type: "degree",
-      title: "Bachelor of Science in Computer Science",
-      institution: "University of Technology",
-      location: "San Francisco, CA",
-      period: "2018 - 2022",
-      description: "Graduated Magna Cum Laude with focus on Software Engineering and Human-Computer Interaction. Completed senior capstone project on machine learning applications in web development.",
-      skills: ["Data Structures", "Algorithms", "Software Engineering", "Database Design", "UI/UX Design"]
+      title: "Dual Degree: Software Engineering & Computer Systems",
+      institution: "Higher Institute of Computer Science, Modeling, and Applications (ISIMA)",
+      location: "France",
+      period: "2022 - 2024",
+      description: "International dual degree program focusing on advanced software engineering practices and computer systems architecture. Gained experience in enterprise-level software development and system design.",
+      skills: ["Software Engineering", "System Architecture", "Enterprise Development", "Software Design Patterns", "System Integration", "Project Management"]
     },
     {
       id: 2,
-      type: "certification",
-      title: "AWS Certified Developer Associate",
-      institution: "Amazon Web Services",
-      location: "Online",
-      period: "2023",
-      description: "Validated expertise in developing and maintaining applications on AWS platform, including serverless architectures and cloud-native solutions.",
-      credentialUrl: "https://aws.amazon.com",
-      skills: ["AWS Lambda", "DynamoDB", "S3", "CloudFormation", "API Gateway"]
+      type: "degree",
+      title: "Dual Degree: Data Science & IoT Engineering",
+      institution: "National School of Computer Science and Systems Analysis (ENSIAS)",
+      location: "Rabat, Morocco",
+      period: "2021 - 2024",
+      description: "Advanced engineering program combining data science methodologies with Internet of Things technologies. Ranked Top 5 in promotion. Developed expertise in machine learning, big data analytics, and connected systems.",
+      skills: ["Data Science", "Machine Learning", "IoT Systems", "Big Data Analytics", "Python", "Sensor Networks", "Cloud Computing"]
     },
     {
       id: 3,
-      type: "certification",
-      title: "Google UX Design Professional Certificate",
-      institution: "Google Career Certificates",
-      location: "Online",
-      period: "2022",
-      description: "Comprehensive program covering the entire UX design process from user research to prototyping and testing. Completed multiple real-world design projects.",
-      credentialUrl: "https://coursera.org",
-      skills: ["User Research", "Wireframing", "Prototyping", "Figma", "Usability Testing"]
+      type: "degree",
+      title: "Bachelor in Computer Science",
+      institution: "Faculty of Sciences and Techniques (FST)",
+      location: "Morocco",
+      period: "2020 - 2021",
+      description: "Bachelor's degree in Computer Science building upon DEUST foundation. Ranked 1st in promotion. Specialized in software development and computer systems.",
+      skills: ["Programming", "Software Development", "Computer Systems", "Algorithms", "Database Management"]
     },
     {
       id: 4,
-      type: "course",
-      title: "Advanced React and GraphQL",
-      institution: "Fullstack Academy",
-      location: "New York, NY",
-      period: "2022",
-      description: "Intensive bootcamp covering advanced React patterns, GraphQL implementation, and modern JavaScript frameworks. Built several production-ready applications.",
-      skills: ["React", "GraphQL", "Apollo", "TypeScript", "Testing"]
-    },
-    {
-      id: 5,
-      type: "certification",
-      title: "Certified Scrum Master (CSM)",
-      institution: "Scrum Alliance",
-      location: "Online",
-      period: "2023",
-      description: "Certification in Agile project management methodologies and Scrum framework. Learned to facilitate team collaboration and project delivery.",
-      credentialUrl: "https://scrumalliance.org",
-      skills: ["Agile", "Scrum", "Team Leadership", "Project Management"]
+      type: "degree",
+      title: "DEUST in Mathematics, Computer Science & Physics",
+      institution: "Faculty of Sciences and Techniques (FST)",
+      location: "Morocco",
+      period: "2018 - 2020",
+      description: "Two-year university diploma in fundamental sciences with focus on mathematics, computer science, and physics. Built strong analytical and problem-solving foundation.",
+      skills: ["Mathematics", "Physics", "Computer Science Fundamentals", "Analytical Thinking", "Problem Solving"]
     }
   ];
 

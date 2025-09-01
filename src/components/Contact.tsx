@@ -1,57 +1,29 @@
-import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, SunMediumIcon } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
-  };
-
+  const MediumIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 1043.63 592.71">
+      <path d="M588.67 296.35c0 163.72-131.7 296.35-294.34 296.35S0 460.07 0 296.35 131.7 0 294.33 0s294.34 132.63 294.34 296.35zM920.43 296.35c0 154.18-65.85 279.16-147.1 279.16s-147.09-124.98-147.09-279.16S692.08 17.19 773.33 17.19s147.1 124.98 147.1 279.16zM1043.63 296.35c0 139.5-23.15 252.67-51.69 252.67s-51.7-113.17-51.7-252.67 23.15-252.67 51.7-252.67 51.69 113.17 51.69 252.67z"/>
+    </svg>
+  );
   const contactInfo = [
     {
       icon: <Mail size={20} />,
       label: "Email",
-      value: "alex.johnson@example.com",
-      href: "mailto:alex.johnson@example.com"
+      value: "ayoubseddiki132@gmail.com",
+      href: "mailto:ayoubseddiki132@gmail.com"
     },
     {
       icon: <Phone size={20} />,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+33 7 63 19 02 35",
+      href: "tel:+33763190235"
     },
     {
       icon: <MapPin size={20} />,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "France",
       href: "#"
     }
   ];
@@ -60,19 +32,25 @@ const Contact = () => {
     {
       icon: <Github size={20} />,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Callme7liwa",
       color: "hover:text-gray-900"
     },
     {
       icon: <Linkedin size={20} />,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/seddiki--ayoub/",
       color: "hover:text-blue-600"
     },
     {
       icon: <Twitter size={20} />,
       label: "Twitter",
-      href: "https://twitter.com",
+      href: "https://x.com/callme7liwa",
+      color: "hover:text-blue-400"
+    },
+    {
+      icon: <MediumIcon />,
+      label: "Medium",
+      href: "https://medium.com/@ayoubseddiki132",
       color: "hover:text-blue-400"
     }
   ];
@@ -86,67 +64,65 @@ const Contact = () => {
             Let's <span className="text-gradient">Connect</span>
           </h2>
           <p className="text-lg text-text-secondary leading-relaxed">
-            Have a project in mind or just want to chat about technology? 
-            I'd love to hear from you. Let's create something amazing together.
+            Have a project in mind or want to discuss opportunities in DevOps, network automation, or software development? 
+            I'd love to hear from you and explore how we can work together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Info */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="fade-in">
+          <div className="space-y-8">
+            <div className="text-center fade-in">
               <h3 className="text-2xl font-heading font-semibold text-text-primary mb-6">
                 Get in Touch
               </h3>
               <p className="text-text-secondary leading-relaxed mb-8">
-                I'm always open to discussing new opportunities, interesting projects, 
-                or just having a conversation about the latest in web development and design.
+                I'm always open to discussing new opportunities, interesting projects in infrastructure automation, 
+                or just having a conversation about the latest in DevOps and network technologies.
               </p>
             </div>
 
-            {/* Contact Details */}
-            <div className="space-y-6">
+            {/* Contact Details Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {contactInfo.map((info, index) => (
                 <div 
                   key={info.label}
-                  className="flex items-center gap-4 p-4 bg-surface rounded-xl hover:shadow-custom-sm transition-all fade-in"
+                  className="flex flex-col items-center text-center p-6 bg-surface rounded-xl hover:shadow-custom-sm transition-all fade-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="p-3 bg-primary/10 text-primary rounded-lg">
+                  <div className="p-4 bg-primary/10 text-primary rounded-full mb-4">
                     {info.icon}
                   </div>
-                  <div>
-                    <p className="font-medium text-text-primary text-sm">
-                      {info.label}
-                    </p>
-                    {info.href !== "#" ? (
-                      <a 
-                        href={info.href}
-                        className="text-text-secondary hover:text-text-accent transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-text-secondary">{info.value}</p>
-                    )}
-                  </div>
+                  <p className="font-medium text-text-primary text-sm mb-2">
+                    {info.label}
+                  </p>
+                  {info.href !== "#" ? (
+                    <a 
+                      href={info.href}
+                      className="text-text-secondary hover:text-text-accent transition-colors"
+                    >
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="text-text-secondary">{info.value}</p>
+                  )}
                 </div>
               ))}
             </div>
 
             {/* Social Links */}
-            <div className="fade-in">
-              <h4 className="font-heading font-semibold text-text-primary mb-4">
-                Follow Me
+            <div className="text-center fade-in">
+              <h4 className="font-heading font-semibold text-text-primary mb-6">
+                Connect on Social Media
               </h4>
-              <div className="flex gap-4">
+              <div className="flex justify-center gap-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-surface rounded-lg text-text-secondary transition-all hover:shadow-custom-sm hover:-translate-y-1 ${social.color}`}
+                    className={`p-4 bg-surface rounded-xl text-text-secondary transition-all hover:shadow-custom-sm hover:-translate-y-1 ${social.color}`}
                     aria-label={social.label}
                   >
                     {social.icon}
@@ -154,110 +130,37 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="card-elevated rounded-2xl p-8 space-y-6 fade-in">
-              <h3 className="text-xl font-heading font-semibold text-text-primary mb-6">
-                Send a Message
-              </h3>
-
-              {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-surface border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-surface border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                    placeholder="your.email@example.com"
-                  />
+            {/* Call to Action */}
+            <div className="text-center pt-8 fade-in">
+              <div className="card-elevated rounded-2xl p-8">
+                <h4 className="text-xl font-heading font-semibold text-text-primary mb-4">
+                  Ready to Work Together?
+                </h4>
+                <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
+                  Whether you need help with DevOps transformation, network automation, 
+                  or full-stack development, I'm here to help turn your ideas into reality.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="mailto:ayoubseddiki132@gmail.com"
+                    className="btn-primary inline-flex items-center gap-2"
+                  >
+                    <Mail size={16} />
+                    Send Email
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/seddiki--ayoub/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex items-center gap-2"
+                  >
+                    <Linkedin size={16} />
+                    Connect on LinkedIn
+                  </a>
                 </div>
               </div>
-
-              {/* Subject */}
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-text-primary mb-2">
-                  Subject *
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                >
-                  <option value="">Select a subject</option>
-                  <option value="project">New Project Inquiry</option>
-                  <option value="collaboration">Collaboration Opportunity</option>
-                  <option value="consultation">Consultation Request</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
-                  placeholder="Tell me about your project or just say hello..."
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="btn-primary flex items-center gap-2 w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send size={16} />
-                    Send Message
-                  </>
-                )}
-              </button>
-
-              <p className="text-xs text-text-secondary text-center">
-                I'll get back to you within 24 hours. Promise!
-              </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
