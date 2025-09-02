@@ -45,7 +45,7 @@ const About = () => {
               <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
                 <div className="w-full h-full flex items-center justify-center text-text-secondary">
-                  <img src="/images/pdp.jpg" alt="Profile" className="object-cover w-full h-full" />
+                  <img src={`${import.meta.env.BASE_URL}/images/pdp.jpg`} alt="Profile" className="object-cover w-full h-full" />
                 </div>
               </div>
               
