@@ -10,7 +10,7 @@ const About = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/CV.pdf";
+    link.href = `${import.meta.env.BASE_URL}/CV.pdf`;
     link.download = "CV.pdf";
     link.click();
   };

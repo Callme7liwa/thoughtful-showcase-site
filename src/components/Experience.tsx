@@ -132,7 +132,7 @@ const Experience = () => {
         "Implemented centralized infrastructure monitoring with real-time alerts for critical server resources"
       ],
       technologies: ["Kubernetes", "GitHub Actions", "Terraform", "Spring Boot", "Docker", "SAP", "SonarQube"],
-      images: ["/images/ge-vernova/ge_1.png", "/images/ge-vernova/ge_2.png", "/images/ge-vernova/ge_3.png"]
+      images: []
     },
     {
       id: 2,
@@ -150,7 +150,7 @@ const Experience = () => {
         "Performed thorough unit testing ensuring application reliability"
       ],
       technologies: ["React", "Redux", "Spring Boot", "MongoDB", "Docker", "Kubernetes", "SonarQube"],
-      images: ["/images/elr12/elr_1.png", "/images/elr12/elr_2.png"]
+      images: []
     },
     {
       id: 3,
@@ -168,7 +168,7 @@ const Experience = () => {
         "Successfully deployed application on client servers with full functionality"
       ],
       technologies: ["HTML5", "CSS3", "JavaScript", "Laravel", "MySQL", "Figma", "UML"],
-      images: ["/images/heritage-lab/heritage_1.png", "/images/heritage-lab/heritage_2.png", "/images/heritage-lab/heritage_3.png"]
+      images: []
     }
   ];
 
